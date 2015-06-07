@@ -14,10 +14,10 @@ def getIntegerInput(prompt, lowerBound, upperBound):
     valid = False
     while not valid:
         value = input(prompt)
-        if lowerBound <= value and value < upperBound:
+        if lowerBound <= int(value) and int(value) < upperBound:
             valid = True
         print("Input should be greater than or equal to ", lowerBound, " and less than ", upperBound)
-    return value
+    return int(value)
 
 def main():
     # get time
@@ -26,7 +26,7 @@ def main():
     #nextTime = time(timeHour, timeMinute)
 
     # get volume
-    newVolume = getInput("Volume: ", 0, 101)
+    newVolume = getIntegerInput("Volume: ", 0, 101)
 
     # get hyperlink (no input guard!!)
     hyperlink = input("Hyperlink: ")
